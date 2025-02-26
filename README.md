@@ -1,2 +1,62 @@
-# publication-management-backend
-A RESTful API to manage blog posts
+# API de Gestion de Publications - NestJS
+
+## Contexte et Objectif
+
+### Contexte
+Ce projet consiste à développer une API RESTful pour gérer des publications de type blog. Afin de simplifier l'infrastructure, les données sont stockées dans un fichier JSON, tout en respectant les bonnes pratiques d'architecture logicielle.
+
+### Objectif
+Le projet vise à évaluer la capacité à construire une application modulaire et évolutive avec NestJS, en :
+- Implémentant une gestion fine des utilisateurs et des rôles (USER, ADMIN).
+- Préparant l'API à des extensions futures (ex. ajout de commentaires, tags).
+
+---
+
+## Choix Techniques
+1. **Framework** : NestJS pour sa structure modulaire, sa simplicité et son extensibilité.
+2. **Stockage des données** : Fichier JSON pour éviter une infrastructure complexe.
+3. **Authentification** : Utilisation de JWT pour une gestion sécurisée des sessions utilisateur.
+4. **Gestion des rôles** : Mise en place de guards pour restreindre l'accès aux fonctionnalités en fonction des rôles (USER, ADMIN).
+5. **Extensibilité** : Structure modulaire pour faciliter l'ajout de nouvelles entités comme les commentaires et les tags.
+
+---
+
+## Structure du Projet
+
+Voici un aperçu de la structure principale du projet :
+
+src/ 
+    ├── database
+        ├── data
+        ├── service
+    ├── modules
+        ├── auth/ # Module pour l'authentification (JWT, guards, rôles) 
+        ├── users/ # Module pour la gestion des utilisateurs et rôles 
+        ├── post/ # Module pour la gestion des publications (CRUD) 
+
+
+## Instructions pour Lancer l'Application
+
+### Prérequis
+- Node.js (version 16 ou supérieure)
+- npm (ou yarn)
+
+### Installation
+1. Clonez le dépôt 
+2. Installez les dépendances "npm install"
+3. Création du fichier .env contenant les informations 
+    - JWT_SECRET="ManageBlogPost"
+    - DB_NAME_USERS=users
+    - DB_NAME_POST=posts
+    - PORT=3000
+4. Lancer l'application en mode développement "npm run start:dev"
+5. L'API sera disponible à l'adresse : http://localhost:3000.
+6. Compte admin par default : username: admin, password: admin123
+
+
+
+### Auteurs
+Créé par Haendel Rafaralahy
+
+# Documentation API
+http://localhost:3000/api
