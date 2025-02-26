@@ -29,10 +29,16 @@ src/
     ├── database
         ├── data
         ├── service
+    ├── middleware
+        ├── decorators
+        ├── guard
+        ├── jwt
     ├── modules
-        ├── auth/ # Module pour l'authentification (JWT, guards, rôles) 
+        ├── auth/ # Module pour l'authentification
         ├── users/ # Module pour la gestion des utilisateurs et rôles 
         ├── post/ # Module pour la gestion des publications (CRUD) 
+    
+        
 
 
 ## Instructions pour Lancer l'Application

@@ -13,7 +13,7 @@ import { PostService } from '../service/post.service';
 import { BlogPost } from '../entity/post.entity';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { PostDto } from '../dto/post.dto';
-import { JwtAuthGuard } from 'src/modules/auth/jwt/jwt-auth.guard.ts';
+import { JwtAuthGuard } from '../../../middleware/jwt/jwt-auth.guard.ts';
 
 @Controller('posts')
 export class PostController {

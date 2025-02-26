@@ -1,11 +1,11 @@
 import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
 import { UsersService } from '../service/users.service';
 import { User } from '../entity/user.entity';
-import { JwtAuthGuard } from '../../auth/jwt/jwt-auth.guard.ts';
+import { JwtAuthGuard } from '../../../middleware/jwt/jwt-auth.guard.ts';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserDto } from '../dto/user.dto';
-import { RolesGuard } from 'src/modules/auth/guard/roles.guard';
-import { Roles } from 'src/modules/auth/decorators/roles.decorator';
+import { RolesGuard } from '../../../middleware/guard/roles.guard';
+import { Roles } from '../../../middleware/decorators/roles.decorator';
 
 @Controller('users')
 export class UsersController {

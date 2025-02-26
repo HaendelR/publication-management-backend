@@ -3,9 +3,9 @@ import { AuthService } from './service/auth.service';
 import { AuthController } from './controller/auth.controller';
 import { UsersModule } from '../users/users.module';
 import { PassportModule } from '@nestjs/passport';
-import { JwtStrategy } from './jwt/jwt.strategy';
-import { JwtAuthGuard } from './jwt/jwt-auth.guard.ts';
-import { RolesGuard } from './guard/roles.guard';
+import { JwtStrategy } from '../../middleware/jwt/jwt.strategy';
+import { JwtAuthGuard } from '../../middleware/jwt/jwt-auth.guard.ts';
+import { RolesGuard } from '../../middleware/guard/roles.guard';
 
 @Module({
   imports: [UsersModule, PassportModule],
