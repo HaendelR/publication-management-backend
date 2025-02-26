@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "test",
+      "description": "test desc",
+      "createdAt": "2025-02-26T12:13:20.387Z",
+      "userId": "",
+      "isDeleted": false
+    },
+    {
+      "id": "2",
+      "title": "test",
+      "description": "test desc",
+      "createdAt": "2025-02-26T12:13:35.164Z",
+      "userId": "",
+      "isDeleted": true
+    },
+    {
+      "id": "3",
+      "title": "test",
+      "description": "test desc",
+      "createdAt": "2025-02-26T12:13:36.567Z",
+      "userId": "",
+      "isDeleted": false
+    },
+    {
+      "id": "4",
+      "title": "admin",
+      "description": "admin desc",
+      "createdAt": "2025-02-26T14:34:03.374Z",
+      "isDeleted": false
+    },
+    {
+      "id": "5",
+      "title": "admin",
+      "description": "admin desc",
+      "createdAt": "2025-02-26T14:34:59.230Z",
+      "isDeleted": false
+    },
+    {
+      "id": "6",
+      "title": "admin",
+      "description": "admin desc",
+      "createdAt": "2025-02-26T14:35:41.604Z",
+      "isDeleted": false
+    },
+    {
+      "id": "7",
+      "title": "admin",
+      "description": "admin desc",
+      "createdAt": "2025-02-26T14:35:47.167Z",
+      "isDeleted": false
+    }
+  ]
+}
