@@ -10,8 +10,6 @@ export class PostService {
   async create(post: PostDto, userId: string): Promise<BlogPost> {
     const posts = this.postRepository.getAll();
 
-    console.log(userId);
-
     const newPost: BlogPost = {
       id: (posts.length + 1).toString(),
       title: post.title,
