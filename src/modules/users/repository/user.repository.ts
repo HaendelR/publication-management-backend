@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DatabaseService } from '../../../database/service/database.service';
-import { User } from '../entity/user.entity';
+import { User, UserRole } from '../entity/user.entity';
 
 @Injectable()
 export class UserRepository {
@@ -31,5 +31,19 @@ export class UserRepository {
 
   findById(id: string): User | undefined {
     return this.getAll().find((user) => user.id === id);
+  }
+
+  updateUserRole(
+    id: string,
+    userRole: { role: UserRole },
+    roleConnected: string,
+  ) {
+    const userToUpdate = this.findById(id);
+    if (roleConnected !== 'admin') return;
+
+    if (userToUpdate) userToUpdate.role = userRole.role;
+
+    const newList = this.getAll().map((p) => (p.id === id ? userToUpdate : p));
+    this.save(newList as User[]);
   }
 }

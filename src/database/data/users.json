@@ -5,6 +5,12 @@
       "username": "admin",
       "password": "$2b$10$DS5gyjvpzYZTZbi0bd2.wOfsOA3LmrXXOrwri162PQoBvaEm4mdPC",
       "role": "admin"
+    },
+    {
+      "role": "user",
+      "id": "dae628ba-db02-4318-b276-dbdf9b82bb06",
+      "username": "user",
+      "password": "$2b$10$TXeZYBs3drLjV5dkfKBO3u5/dsJLJQO/8SpAZSl/6HrZMOxEPdepW"
     }
   ]
 }

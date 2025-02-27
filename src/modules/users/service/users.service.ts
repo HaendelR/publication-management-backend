@@ -21,7 +21,7 @@ export class UsersService {
       id: uuidv4(),
       username: user.username,
       password: hashedPassword,
-      role: UserRole.ADMIN,
+      role: UserRole.USER,
     };
 
     users.push(newUser);
@@ -39,5 +39,9 @@ export class UsersService {
 
   async findById(id: string): Promise<User | undefined> {
     return this.userRepository.findById(id);
+  }
+
+  async updateRole(id: string, userRole: { role: UserRole }, role: string) {
+    this.userRepository.updateUserRole(id, userRole, role);
   }
 }

@@ -1,6 +1,15 @@
-import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  UseGuards,
+  Req,
+  Put,
+} from '@nestjs/common';
 import { UsersService } from '../service/users.service';
-import { User } from '../entity/user.entity';
+import { User, UserRole } from '../entity/user.entity';
 import { JwtAuthGuard } from '../../../middleware/guard/jwt-auth.guard.ts';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserDto } from '../dto/user.dto';
@@ -66,5 +75,27 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.usersService.findById(id);
+  }
+
+  @Put('role/:id')
+  @ApiOperation({ summary: 'Modification Role par Id' })
+  @ApiResponse({
+    status: 200,
+    description: 'Ok : Role modifier',
+    type: String,
+  })
+  @ApiResponse({ status: 204, description: 'Pas de contenu' })
+  @ApiResponse({ status: 400, description: 'Requête invalide' })
+  @ApiResponse({ status: 401, description: 'Utilisateur non authentifié' })
+  @ApiResponse({ status: 403, description: 'Accès refusé' })
+  @ApiResponse({ status: 500, description: 'Erreur dans la serveur' })
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  updateRole(
+    @Param('id') id: string,
+    @Body() role: { role: UserRole },
+    @Req() req,
+  ) {
+    return this.usersService.updateRole(id, role, req.user.role);
   }
 }
