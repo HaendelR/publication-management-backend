@@ -25,19 +25,19 @@ Préparant l'API à des extensions futures (ex. ajout de commentaires, tags).
 ## Structure du Projet
 
 Voici un aperçu de la structure principale du projet :
-(image.png)
+
 src/
-   ├── database
-      ├── data
-      ├── service
-   ├── middleware
-      ├── decorators
-      ├── guard
-      ├── jwt
-   ├── modules
-      ├── auth/ # Module pour l'authentification
-      ├── users/ # Module pour la gestion des utilisateurs et rôles
-      ├── post/ # Module pour la gestion des publications (CRUD)
+├── database
+├── data
+├── service
+├── middleware
+├── decorators
+├── guard
+├── jwt
+├── modules
+├── auth/ # Module pour l'authentification
+├── users/ # Module pour la gestion des utilisateurs et rôles
+├── post/ # Module pour la gestion des publications (CRUD)
 
 ## Instructions pour Lancer l'Application
 
