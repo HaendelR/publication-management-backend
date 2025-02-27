@@ -19,7 +19,7 @@ import { JwtAuthGuard } from '../../../middleware/guard/jwt-auth.guard.ts';
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
-  @Post('add')
+  @Post()
   @ApiOperation({ summary: 'Création publication' })
   @ApiBody({ type: PostDto })
   @ApiResponse({

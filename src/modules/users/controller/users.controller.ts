@@ -20,7 +20,7 @@ import { Roles } from '../../../middleware/decorators/roles.decorator';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post('register')
+  @Post()
   @ApiOperation({ summary: 'Création utilisateur' })
   @ApiBody({ type: UserDto })
   @ApiResponse({
