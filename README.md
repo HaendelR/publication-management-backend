@@ -6,12 +6,6 @@
 
 Ce projet consiste à développer une API RESTful pour gérer des publications de type blog. Afin de simplifier l'infrastructure, les données sont stockées dans un fichier JSON, tout en respectant les bonnes pratiques d'architecture logicielle.
 
-### Objectif
-Le projet vise à évaluer la capacité à construire une application modulaire et évolutive avec NestJS, en :
-
-Implémentant une gestion fine des utilisateurs et des rôles (USER, ADMIN).
-Préparant l'API à des extensions futures (ex. ajout de commentaires, tags).
-
 ## Choix Techniques
 
 1. **Framework** : NestJS pour sa structure modulaire, sa simplicité et son extensibilité.
