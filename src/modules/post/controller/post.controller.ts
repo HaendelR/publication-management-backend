@@ -13,7 +13,7 @@ import { PostService } from '../service/post.service';
 import { BlogPost } from '../entity/post.entity';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { PostDto } from '../dto/post.dto';
-import { JwtAuthGuard } from '../../../middleware/jwt/jwt-auth.guard.ts';
+import { JwtAuthGuard } from '../../../middleware/guard/jwt-auth.guard.ts';
 
 @Controller('posts')
 export class PostController {
@@ -89,7 +89,6 @@ export class PostController {
   @ApiResponse({ status: 500, description: 'Erreur dans la serveur' })
   @UseGuards(JwtAuthGuard)
   update(@Param('id') id: string, @Body() post: BlogPost, @Req() req) {
-    console.log(req.user);
 
     return this.postService.update(id, post, req.user.id, req.user.role);
   }

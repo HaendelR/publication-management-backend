@@ -7,7 +7,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Post Management API')
-    .setDescription('API RestFull for pour manage blog post and users roles')
+    .setDescription('API RestFull to manage blog post and users roles')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

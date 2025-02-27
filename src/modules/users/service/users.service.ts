@@ -1,7 +1,8 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
+import { v4 as uuidv4 } from 'uuid';
 import { UserRepository } from '../repository/user.repository';
 import { User, UserRole } from '../entity/user.entity';
-import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -17,10 +18,10 @@ export class UsersService {
     const hashedPassword = await bcrypt.hash(user.password, 10);
 
     const newUser: User = {
-      id: (users.length + 1).toString(),
+      id: uuidv4(),
       username: user.username,
       password: hashedPassword,
-      role: UserRole.USER,
+      role: UserRole.ADMIN,
     };
 
     users.push(newUser);

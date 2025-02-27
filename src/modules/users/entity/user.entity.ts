@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsString, MinLength } from 'class-validator';
+import { IsEnum, IsString, Matches, MinLength } from 'class-validator';
 
 export enum UserRole {
   USER = 'user',
@@ -14,9 +14,26 @@ export class User {
   username: string;
 
   @IsString()
-  @ApiProperty({ example: 'password', minLength: 6 })
   @MinLength(6, {
-    message: 'Possword must be contains 6 character',
+    message: 'Password must contain at least 6 characters',
+  })
+  @Matches(/(?=.*[a-z])/, {
+    message: 'Password must contain at least one lowercase letter',
+  })
+  @Matches(/(?=.*[A-Z])/, {
+    message: 'Password must contain at least one uppercase letter',
+  })
+  @Matches(/(?=.*\d)/, {
+    message: 'Password must contain at least one digit',
+  })
+  @Matches(/(?=.*[\W_])/, {
+    message: 'Password must contain at least one special character',
+  })
+  @ApiProperty({
+    example: 'P@ssw0rd',
+    minLength: 6,
+    description:
+      'Must contain at least one lowercase, one uppercase, one number and one special character',
   })
   password: string;
 

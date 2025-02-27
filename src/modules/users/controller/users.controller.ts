@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
 import { UsersService } from '../service/users.service';
 import { User } from '../entity/user.entity';
-import { JwtAuthGuard } from '../../../middleware/jwt/jwt-auth.guard.ts';
+import { JwtAuthGuard } from '../../../middleware/guard/jwt-auth.guard.ts';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserDto } from '../dto/user.dto';
 import { RolesGuard } from '../../../middleware/guard/roles.guard';
