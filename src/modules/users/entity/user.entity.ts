@@ -7,6 +7,8 @@ export enum UserRole {
 }
 
 export class User {
+  @IsString()
+  @ApiProperty({ example: 'dae628ba-db02-4318-b276-dbdf9b82bb08' })
   id: string;
 
   @IsString()

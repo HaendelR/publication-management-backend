@@ -4,6 +4,11 @@ export class UserDto {
   @ApiProperty({ example: 'admin' })
   username: string;
 
-  @ApiProperty({ example: '123456', minLength: 6 })
+  @ApiProperty({
+    example: 'P@ssw0rd',
+    minLength: 6,
+    description:
+      'Must contain at least one lowercase, one uppercase, one number and one special character',
+  })
   password: string;
 }

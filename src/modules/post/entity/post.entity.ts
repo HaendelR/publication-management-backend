@@ -9,7 +9,7 @@ export class BlogPost {
   title: string;
 
   @IsString()
-  @ApiProperty({ example: '1' })
+  @ApiProperty({ example: 'dae628ba-db02-4318-b276-dbdf9b82bb08' })
   userId: string;
 
   @IsString()
