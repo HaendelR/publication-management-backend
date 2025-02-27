@@ -57,7 +57,7 @@ src/
     - PORT=3000
 4. Lancer l'application en mode développement "npm run start:dev"
 5. L'API sera disponible à l'adresse : http://localhost:3000.
-6. Compte admin par default : username: admin, password: admin123
+6. Login Admin par default : username: admin, password: Admin123.
 
 
 
