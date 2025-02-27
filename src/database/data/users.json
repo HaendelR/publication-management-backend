@@ -1,9 +1,9 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "219d7c2d-93ec-4994-ac49-b64f1fa5c241",
       "username": "admin",
-      "password": "$2b$10$SsNko.RXBBnRgvW2z.9H4OdF42yImMm8g5OloDWF19bxs7w0MUnBO",
+      "password": "$2b$10$DS5gyjvpzYZTZbi0bd2.wOfsOA3LmrXXOrwri162PQoBvaEm4mdPC",
       "role": "admin"
     }
   ]
